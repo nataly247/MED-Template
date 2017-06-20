@@ -1,0 +1,350 @@
+/****** MIXINS ******/
+/* May be used in top-nav section and footer */  
+@mixin dark-section {
+  background-color: $darkgrey;
+  color: $white;
+}
+
+/* Used in testimonials owl-carusel and blog sections */ 
+@mixin black-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: $black;
+}
+
+/* in sections features, mob-app and key-fig */
+@mixin grey-text {
+	font-size: 16px;
+    line-height: 1.5;
+    color: $warm-grey;
+}
+
+@mixin big-heading {
+    padding-top: 30px;
+	font-size: 45px;
+    font-weight: bold;
+    line-height: 1.04;
+}
+
+
+/* h6 */
+@mixin small-heading {
+	font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $black;
+    a:link{
+    	color: $black; 
+    	text-decoration: none;
+    }
+    a:hover{
+    	color: $dark-blue; 
+    	text-decoration: none;
+    }
+}
+
+/****************************/
+
+
+.top-nav {
+  background-color: $darkgrey;
+  font-size: $font-size-small;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 0;
+  margin-left: 0;
+  li {
+    float: left;
+    padding: 20px 10px 20px 0;
+    list-style: none;
+    text-decoration-line: none;
+    a {
+      &:link, &:visited {
+        color: $white;
+        text-decoration: none;
+        }
+      &:hover, &:active {
+        color: darken($white, 50%);
+      }
+    }
+    &:last-child {
+        @media (min-width: 767px) { 
+        float: right;
+       }
+        @media (max-width: 767px) { 
+        text-align: center;
+       }
+    }
+  }
+   
+}
+
+/* Navigation */
+header {
+  font-size: $font-size-base;
+  font-weight: bold;
+  margin-bottom: 0;
+    ul {
+       text-transform: uppercase;
+        li a{
+            color: $link-color; 
+        }
+    }
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: inherit;
+  letter-spacing: -1px;
+  text-align: left;
+  color: $azure-two;
+  .text-grey {
+      color: $warm-grey;
+      a{
+       &:hover{
+            darken: ($warm-grey, 15%);
+        }
+      }
+   }
+}
+
+.price-button {
+    color: $white-two;
+    font-size: $font-size-base;
+    text-transform: uppercase;
+    border-radius: 25px;
+    padding: 10px 32px;
+}
+
+
+
+
+
+h1 {
+  @extende text-grey;
+  /*padding: 30px 0;
+  font-family: inherit;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.04;*/
+  text-align: center;
+  color: $dark-blue;
+}
+
+h1.big-numbers {
+  @extend h1;
+  color: $azure;
+}
+
+
+
+/* JUMBOTRON */
+.jumbotron {
+  padding: 0; 
+  margin-top: 0;
+  background: linear-gradient(to right, $azure, $white);
+  background: $azure; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    left,
+    $azure,
+    $white
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    right,
+    $azure,
+    $white
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    right,
+    $azure,
+    $white
+  ); /* For Firefox 3.6 to 15 */
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  color: $white;
+  border-radius: 0;
+}
+
+.hero-bgd {
+  background-size: cover; /* to fit all image*/
+  background-position: center;
+  position: absolute;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.hero-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-position: right;
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-text-box {
+  padding-top: 50px;
+  color: $white;
+  position: absolute;
+  opacity: 1;
+  z-index: 3;
+  p {
+    display: inline-block;
+    letter-spacing: normal;
+    font-size: $font-size-small;
+    a {
+      &:link, &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.hero-text-box p {
+  display: inline-block;
+  letter-spacing: normal;
+  font-size: $font-size-small;
+}
+.hero-text-box p a:link,
+.hero-text-box p a:hover {
+  color: $white;
+}
+
+.blue-text {
+  color: $dark-blue;
+}
+
+.more {
+  text-align: right;
+  color: $white;
+  a {
+      &:link, &:hover {
+        color: $white;
+      }
+    }
+}
+
+.section-features h3 {
+  padding-top: 20px;
+  color: $dark-blue;
+  text-width: bold;
+}
+
+.features-cards {
+  padding: 60px 60px; 
+    
+    p {
+        @include grey-text;
+    }
+}
+
+
+
+.blue-box {
+  background-color: $dark-blue;
+  padding: 120px 120px;
+  margin: 60px -15px;
+}
+
+p.grey-text {
+    @include grey-text;
+}
+
+.big-button {
+    padding: 50px;
+    color: $white-two;
+    font-size: $font-size-base;
+    border-radius: 25px;
+    padding: 20px 72px;
+    margin-top: 30px;
+}
+
+/*Mobile App */
+.mobile-app {
+    @extende text-grey;
+    .map-wrapper {
+    background-image: url("img/wordmap-light");
+    opacity: 0.9;
+    z-index: 1;
+    }
+    h1.big-numbers{
+        text-align: left;
+    }
+}
+
+/* KEY FIGURES */
+.key-figures {
+    text-align: center;
+    @extende text-grey;
+    .numbers:not(:last-child){
+			  		border-right: 1px solid $white-three;
+			  	
+    }
+    
+}
+
+.lj-feedback {
+    p {
+        font-style: italic; 
+    }
+}
+
+
+/*----- BLOG POST ----*/
+
+.blog {
+  margin-top: 20px;
+}
+
+.blog-post {
+  width: 100%;
+  padding: 10px auto;
+  background-color: $white;
+  color: $black;
+  font-weight: 200;
+  font-style: normal;
+  text-align: left;
+  box-shadow: 0 2px 15px 0 rgba(0, 153, 255, .1);
+  img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+  }
+  
+  h6 {
+    @include small-heading;
+    margin-top: 20px;
+  }
+}
+
+.smaller {
+  height: 50%;
+  padding: 0px 8px;
+}
+
+/* FOOTER */
+footer {
+   background-color: $darkgrey; 
+}
+
+.company-name-white {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-align: left;
+  color: $white;
+}
+
+
+
